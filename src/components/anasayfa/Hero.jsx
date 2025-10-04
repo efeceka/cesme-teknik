@@ -5,19 +5,27 @@ import { Wrench, BadgeCheck } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="relative overflow-x-hidden bg-[#0F2B4C] min-h-[560px] pb-24 sm:pb-20">
+    <section
+      className="
+        relative bg-[#0F2B4C] min-h-[560px]
+        overflow-hidden md:overflow-visible
+        pb-28 sm:pb-24
+      "
+    >
       {/* Lacivert alan */}
-      <div className="relative max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-start
-                      px-4 sm:px-6 lg:px-8 pt-16 lg:pt-20 pb-6 lg:pb-10">
+      <div
+        className="
+          relative max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-start
+          px-4 sm:px-6 lg:px-8 pt-16 lg:pt-20 pb-6 lg:pb-10
+        "
+      >
         {/* SOL: Metin */}
         <div className="text-white text-center lg:text-left">
-          {/* Eyebrow */}
           <div className="flex items-center justify-center lg:justify-start gap-3 mb-6">
             <span className="inline-block h-[2px] w-10 bg-white/60" />
             <span className="text-white/80 text-sm tracking-wide">Çeşme Teknik</span>
           </div>
 
-          {/* Başlık */}
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.1]">
             Tesisat Sorunlarınızı <span className="text-[#F2C94C]">Hızla</span>
             <br /> Çözüyoruz!
@@ -40,22 +48,21 @@ export default function Hero() {
         </div>
 
         {/* SAĞ: Görsel */}
-        <div className="relative h-[420px] sm:h-[520px] lg:h-[550px] flex items-end overflow-visible">
-          <div className="relative w-full h-full">
-            <Image
-              src="/images/hero2.png"
-              alt="Çeşme Teknik Usta"
-              fill
-              priority
-              sizes="(min-width:1024px) 50vw, 90vw"
-              className="
-                object-contain object-bottom
-                pointer-events-none select-none
-                scale-150 sm:scale-[1.3] md:scale-[1.2] lg:scale-[1.5]
-                origin-bottom
-              "
-            />
-          </div>
+        <div className="relative h-[420px] sm:h-[520px] lg:h-[560px] flex items-end overflow-hidden">
+          <Image
+            src="/images/hero2.png"
+            alt="Çeşme Teknik Usta"
+            fill
+            priority
+            sizes="(min-width:1024px) 50vw, 90vw"
+            className="
+              object-contain object-bottom
+              pointer-events-none select-none
+              transform-gpu will-change-transform
+              scale-[1.35] sm:scale-[1.25] md:scale-[1.2] lg:scale-[1.45]
+              origin-bottom
+            "
+          />
         </div>
       </div>
 
@@ -63,7 +70,13 @@ export default function Hero() {
       <div className="absolute bottom-0 left-0 right-0 h-24 bg-white rounded-t-[24px]" />
 
       {/* Overlap kartlar */}
-      <div className="absolute left-1/2 -translate-x-1/2 bottom-[-20px] sm:bottom-[-10px] md:bottom-6 w-full max-w-6xl px-4 sm:px-6 lg:px-8 z-30">
+      <div
+        className="
+          absolute left-1/2 -translate-x-1/2
+          bottom-2 sm:bottom-4 md:bottom-6
+          w-full max-w-6xl px-4 sm:px-6 lg:px-8 z-30
+        "
+      >
         <div className="grid grid-cols-1 md:grid-cols-[1.2fr_.9fr] gap-6">
           {/* Kart 1 */}
           <div className="rounded-2xl bg-white shadow-xl p-5 sm:p-6 flex items-start gap-4">
@@ -78,7 +91,7 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Kart 2 */}
+          {/* Kart 2 (sarı) */}
           <div className="rounded-2xl bg-[#F2C94C] shadow-xl p-5 sm:p-6 flex items-start justify-between gap-4">
             <div className="flex items-start gap-4">
               <div className="shrink-0 mt-1 text-[#0F2B4C]">
@@ -92,7 +105,7 @@ export default function Hero() {
 
             <Link
               href="/hakkimizda"
-              className="self-center rounded-full bg-[#0F2B4C] text-white px-4 py-2 text-sm font-semibold hover:bg-[#0c223f] transition"
+              className="self-center rounded-full bg-[#0F2B4C] text-white px-4 py-2 text-sm font-semibold hover:bg-[#0c223f] transition whitespace-nowrap"
             >
               Hakkımızda
             </Link>

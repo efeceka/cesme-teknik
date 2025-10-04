@@ -22,7 +22,7 @@ export default function FloatingButtons() {
 
       {/* Telefon */}
       <Link
-        href="tel:05394086760"
+        href="tel:05356550910"
         aria-label="Telefonla ara"
         className="group relative bg-[#0F2B4C] hover:bg-[#0c223f] text-white 
                    shadow-[0_0_15px_rgba(0,0,0,0.25)] 

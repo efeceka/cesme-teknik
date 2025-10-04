@@ -204,12 +204,13 @@ export default function ContactPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="rounded-2xl overflow-hidden shadow-[0_12px_40px_-18px_rgba(0,0,0,0.35)]">
             <iframe
-              title="Çeşme Teknik - Konum"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d100166.94903126423!2d26.21447814322332!3d38.320801808199334!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14bb78505a996411%3A0x74bd9e2ae90154c7!2zw4dlxZ9tZS_EsHptaXIsIFTDvHJraXll!5e0!3m2!1str!2sde!4v1759582570710!5m2!1str!2sde"
-              className="w-full h-[380px]"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
+  title="Çeşme Teknik - Musalla Mahallesi 1045. Sokak No: 4/2, Çeşme / İzmir"
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3110.2892760205363!2d26.29582097603123!3d38.32409177186663!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14bb78b83b30c5b7%3A0x6d2e65741704e70a!2sMusalla%2C%201045.%20Sk.%20No%3A4%2F2%2C%2035945%20%C3%87e%C5%9Fme%2F%C4%B0zmir!5e0!3m2!1str!2str!4v1738645503521!5m2!1str!2str"
+  className="w-full h-[380px] rounded-xl border-0 shadow-md"
+  loading="lazy"
+  allowFullScreen
+  referrerPolicy="no-referrer-when-downgrade"
+/>
           </div>
         </div>
       </section>

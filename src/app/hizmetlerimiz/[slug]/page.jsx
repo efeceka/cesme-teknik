@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import {
   Wrench,
   Search,
@@ -103,13 +104,37 @@ const services = {
   },
 };
 
+const SITE_URL = "https://www.cesmeteknikkanalacma.com";
+
 /** SEO */
 export async function generateMetadata({ params }) {
   const s = services[params.slug];
-  if (!s) return { title: "Hizmet Bulunamadı | Çeşme Teknik" };
+  if (!s) {
+    return {
+      title: "Hizmet Bulunamadı | Çeşme Teknik",
+      robots: { index: false, follow: false },
+    };
+  }
+  const url = `${SITE_URL}/hizmetlerimiz/${params.slug}`;
   return {
     title: `${s.title} | Çeşme Teknik`,
     description: s.desc,
+    alternates: { canonical: url },
+    openGraph: {
+      title: `${s.title} | Çeşme Teknik`,
+      description: s.desc,
+      url,
+      siteName: "Çeşme Teknik",
+      images: [{ url: "/og.png", width: 1200, height: 630, alt: s.title }],
+      locale: "tr_TR",
+      type: "article",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${s.title} | Çeşme Teknik`,
+      description: s.desc,
+      images: ["/og.png"],
+    },
   };
 }
 
@@ -120,18 +145,7 @@ export function generateStaticParams() {
 
 export default function ServiceDetailPage({ params }) {
   const service = services[params.slug];
-
-  if (!service) {
-    return (
-      <div className="max-w-4xl mx-auto py-20 text-center">
-        <h1 className="text-3xl font-bold">Hizmet bulunamadı</h1>
-        <p className="text-gray-600 mt-2">Aradığınız hizmet sayfası mevcut değil.</p>
-        <Link href="/hizmetlerimiz" className="text-[#0F2B4C] font-semibold hover:underline mt-4 inline-block">
-          ← Tüm Hizmetler
-        </Link>
-      </div>
-    );
-  }
+  if (!service) return notFound();
 
   const Icon = service.icon ?? Wrench;
 

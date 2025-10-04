@@ -9,19 +9,20 @@ export default function Hero() {
       className="
         relative bg-[#0F2B4C] min-h-[560px]
         overflow-hidden md:overflow-visible
-        pb-28 sm:pb-24
+        pb-24 sm:pb-20
       "
     >
       {/* Lacivert alan */}
       <div
         className="
-          relative max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-start
-          px-4 sm:px-6 lg:px-8 pt-16 lg:pt-20 pb-6 lg:pb-10
+          relative max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2
+          gap-4 sm:gap-6 lg:gap-8 items-start
+          px-4 sm:px-6 lg:px-8 pt-14 sm:pt-16 lg:pt-20 pb-4 lg:pb-10
         "
       >
         {/* SOL: Metin */}
         <div className="text-white text-center lg:text-left">
-          <div className="flex items-center justify-center lg:justify-start gap-3 mb-6">
+          <div className="flex items-center justify-center lg:justify-start gap-3 mb-5 sm:mb-6">
             <span className="inline-block h-[2px] w-10 bg-white/60" />
             <span className="text-white/80 text-sm tracking-wide">Çeşme Teknik</span>
           </div>
@@ -31,13 +32,13 @@ export default function Hero() {
             <br /> Çözüyoruz!
           </h1>
 
-          <p className="mt-6 text-base sm:text-lg text-white/80 max-w-xl mx-auto lg:mx-0">
+          <p className="mt-5 sm:mt-6 text-base sm:text-lg text-white/80 max-w-xl mx-auto lg:mx-0">
             Ev ya da iş yerinizdeki tesisat sıkıntılarını, gelişmiş cihazlarımızla
             kırma–dökme olmadan çözüyoruz. Net fiyat, temiz işçilik ve hızlı sonuç:
             Çeşme ve çevresinde güvenle yanınızdayız.
           </p>
 
-          <div className="mt-8">
+          <div className="mt-7 sm:mt-8">
             <Link
               href="tel:05394086760"
               className="inline-flex items-center gap-2 rounded-full bg-[#F2C94C] text-[#0F2B4C] font-semibold px-6 py-3 shadow-md hover:shadow-lg transition mx-auto lg:mx-0"
@@ -48,7 +49,7 @@ export default function Hero() {
         </div>
 
         {/* SAĞ: Görsel */}
-        <div className="relative h-[420px] sm:h-[520px] lg:h-[560px] flex items-end overflow-hidden">
+        <div className="relative h-[380px] sm:h-[480px] lg:h-[560px] flex items-end overflow-hidden -mt-15 sm:mt-0">
           <Image
             src="/images/hero2.png"
             alt="Çeşme Teknik Usta"
@@ -59,7 +60,7 @@ export default function Hero() {
               object-contain object-bottom
               pointer-events-none select-none
               transform-gpu will-change-transform
-              scale-[1.35] sm:scale-[1.25] md:scale-[1.2] lg:scale-[1.45]
+              scale-[1.3] sm:scale-[1.25] md:scale-[1.2] lg:scale-[1.45]
               origin-bottom
             "
           />
@@ -73,7 +74,7 @@ export default function Hero() {
       <div
         className="
           absolute left-1/2 -translate-x-1/2
-          bottom-2 sm:bottom-4 md:bottom-6
+          bottom-0 sm:bottom-3 md:bottom-6
           w-full max-w-6xl px-4 sm:px-6 lg:px-8 z-30
         "
       >

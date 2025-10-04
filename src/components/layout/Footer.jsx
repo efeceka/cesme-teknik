@@ -100,12 +100,6 @@ export default function Footer() {
               <span className="text-white/80">Çeşme / İzmir</span>
             </li>
             <li className="flex items-start gap-3">
-              <Icon.mail className="h-5 w-5 text-white/80 mt-0.5" />
-              <Link href="mailto:info@cesmeteknik.com" className="text-white/80 hover:text-white transition">
-                info@cesmeteknik.com
-              </Link>
-            </li>
-            <li className="flex items-start gap-3">
               <Icon.phone className="h-5 w-5 text-white/80 mt-0.5" />
               <Link href="tel:05394086760" className="text-white/80 hover:text-white transition">
                 0539 408 67 60

@@ -106,20 +106,6 @@ export default function ContactPage() {
             <div className="rounded-2xl border border-gray-100 bg-white p-5 shadow-[0_10px_30px_-16px_rgba(0,0,0,0.15)]">
               <div className="flex items-start gap-3">
                 <span className="grid h-10 w-10 place-items-center rounded-xl bg-[#0F2B4C]/5 ring-1 ring-[#0F2B4C]/10 text-[#0F2B4C]">
-                  <Mail className="h-6 w-6" />
-                </span>
-                <div>
-                  <div className="font-semibold text-gray-900">E-posta</div>
-                  <Link href="mailto:..." className="text-sm text-gray-700 hover:underline">
-                    ...
-                  </Link>
-                </div>
-              </div>
-            </div>
-
-            <div className="rounded-2xl border border-gray-100 bg-white p-5 shadow-[0_10px_30px_-16px_rgba(0,0,0,0.15)]">
-              <div className="flex items-start gap-3">
-                <span className="grid h-10 w-10 place-items-center rounded-xl bg-[#0F2B4C]/5 ring-1 ring-[#0F2B4C]/10 text-[#0F2B4C]">
                   <MapPin className="h-6 w-6" />
                 </span>
                 <div>

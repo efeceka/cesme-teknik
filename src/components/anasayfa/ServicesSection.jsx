@@ -131,7 +131,7 @@ export default function ServicesSection() {
             </p>
             <div className="mt-5">
               <Link
-                href="/hizmetler"
+                href="/hizmetlerimiz"
                 className="inline-flex items-center gap-2 rounded-full bg-[#0F2B4C] text-white px-5 py-2.5 text-sm font-semibold hover:bg-[#0c223f] transition"
               >
                 Hizmetlerimiz »

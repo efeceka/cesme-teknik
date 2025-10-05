@@ -77,13 +77,6 @@ export default function StepsAndLead() {
       {/* ÜST BLOK */}
       <div className="relative bg-[#0F2B4C]">
         <div className="absolute inset-0">
-          <Image
-            src="/images/steps/bg.jpg"
-            alt=""
-            fill
-            className="object-cover opacity-20"
-            priority
-          />
           <div className="absolute inset-0 bg-[#0F2B4C]/70" />
         </div>
 

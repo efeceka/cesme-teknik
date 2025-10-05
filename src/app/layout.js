@@ -6,23 +6,26 @@ import Footer from "@/components/layout/Footer";
 import FloatingButtons from "@/components/common/FloatingButtons";
 import Script from "next/script";
 
+/* ------------------ FONTS ------------------ */
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
   display: "swap",
 });
-
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
   display: "swap",
 });
 
+/* ------------------ SABİT VERİLER ------------------ */
 const SITE_NAME = "Çeşme Teknik";
 const SITE_URL = "https://www.cesmeteknikkanalacma.com";
 const PHONE_DISPLAY = "0539 408 67 60";
 const PHONE_INTL = "+905394086760";
+const ADDRESS = "Musalla Mahallesi 1045 Sokak No: 4/2, Çeşme, İzmir";
 
+/* ------------------ METADATA ------------------ */
 export const metadata = {
   metadataBase: new URL(SITE_URL),
   applicationName: SITE_NAME,
@@ -46,9 +49,6 @@ export const metadata = {
   authors: [{ name: SITE_NAME }],
   creator: SITE_NAME,
   publisher: SITE_NAME,
-  referrer: "origin-when-cross-origin",
-  generator: "Next.js",
-  category: "HomeImprovement",
   alternates: {
     canonical: SITE_URL,
   },
@@ -62,7 +62,7 @@ export const metadata = {
       "Çeşme ve çevresinde kırmadan-dökmeden profesyonel tesisat çözümleri. Hızlı keşif, net fiyat, temiz işçilik.",
     images: [
       {
-        url: "/og.png", // 1200x630 önerilir
+        url: "/og.png",
         width: 1200,
         height: 630,
         alt: `${SITE_NAME} - Çeşme Tesisat`,
@@ -97,20 +97,18 @@ export const metadata = {
     shortcut: ["/favicon.ico"],
   },
   manifest: "/site.webmanifest",
-  themeColor: "#0F2B4C",
-  colorScheme: "light",
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-  },
-  other: {
-    "geo.region": "TR-35",
-    "geo.placename": "Çeşme",
-    "geo.position": "38.323;26.302",
-    ICBM: "38.323, 26.302",
-  },
+  category: "HomeImprovement",
 };
 
+/* ------------------ VIEWPORT (ayrı export olmalı) ------------------ */
+export const viewport = {
+  themeColor: "#0F2B4C",
+  colorScheme: "light",
+  width: "device-width",
+  initialScale: 1,
+};
+
+/* ------------------ ROOT LAYOUT ------------------ */
 export default function RootLayout({ children }) {
   const businessSchema = {
     "@context": "https://schema.org",
@@ -126,6 +124,7 @@ export default function RootLayout({ children }) {
       addressLocality: "Çeşme",
       addressRegion: "İzmir",
       addressCountry: "TR",
+      postalCode: "35930",
     },
     areaServed: ["Çeşme", "İzmir"],
     openingHoursSpecification: [
@@ -158,12 +157,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="tr">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        {/* JSON-LD (SEO) */}
+        {/* ✅ JSON-LD Schema */}
         <Script
           id="ld-localbusiness"
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(businessSchema) }}
         />
+
         <Header />
         {children}
         <FloatingButtons />

@@ -124,13 +124,6 @@ export default function ServicesPage() {
       {/* HERO */}
       <section className="relative bg-[#0F2B4C] text-white">
         <div className="absolute inset-0">
-          <Image
-            src="/images/services/hero.jpg" // opsiyonel arka plan
-            alt=""
-            fill
-            className="object-cover opacity-20"
-            priority
-          />
           <div className="absolute inset-0 bg-[#0F2B4C]/70" />
         </div>
 

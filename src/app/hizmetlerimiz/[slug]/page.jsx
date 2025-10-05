@@ -1,3 +1,4 @@
+// src/app/hizmetlerimiz/[slug]/page.jsx
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
@@ -12,7 +13,7 @@ import {
   Phone,
 } from "lucide-react";
 
-/** Tüm hizmetler — görselsiz yapı */
+// (İstersen burayı ayrı bir dosyadan da import edebilirsin)
 const services = {
   "su-kacagi-tespiti": {
     title: "Su Kaçağı Tespiti",
@@ -104,18 +105,22 @@ const services = {
   },
 };
 
+// ——— SEO ———
 const SITE_URL = "https://www.cesmeteknikkanalacma.com";
 
-/** SEO */
 export async function generateMetadata({ params }) {
-  const s = services[params.slug];
+  // ⬇️ params Promise olabilir; await et
+  const { slug } = await params;
+  const s = services[slug];
+
   if (!s) {
     return {
       title: "Hizmet Bulunamadı | Çeşme Teknik",
-      robots: { index: false, follow: false },
+      description: "Aradığınız hizmet sayfası mevcut değil.",
     };
   }
-  const url = `${SITE_URL}/hizmetlerimiz/${params.slug}`;
+
+  const url = `${SITE_URL}/hizmetlerimiz/${slug}`;
   return {
     title: `${s.title} | Çeşme Teknik`,
     description: s.desc,
@@ -124,27 +129,22 @@ export async function generateMetadata({ params }) {
       title: `${s.title} | Çeşme Teknik`,
       description: s.desc,
       url,
-      siteName: "Çeşme Teknik",
-      images: [{ url: "/og.png", width: 1200, height: 630, alt: s.title }],
-      locale: "tr_TR",
       type: "article",
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: `${s.title} | Çeşme Teknik`,
-      description: s.desc,
-      images: ["/og.png"],
+      siteName: "Çeşme Teknik",
     },
   };
 }
 
-/** Statik üretim için tüm slug'lar */
+// ——— Static params ———
 export function generateStaticParams() {
   return Object.keys(services).map((slug) => ({ slug }));
 }
 
-export default function ServiceDetailPage({ params }) {
-  const service = services[params.slug];
+// ——— Page ———
+export default async function ServiceDetailPage({ params }) {
+  // ⬇️ Burada da await et
+  const { slug } = await params;
+  const service = services[slug];
   if (!service) return notFound();
 
   const Icon = service.icon ?? Wrench;
@@ -160,8 +160,12 @@ export default function ServiceDetailPage({ params }) {
             </span>
           </div>
 
-          <h1 className="mt-5 text-center text-3xl sm:text-5xl font-extrabold">{service.title}</h1>
-          <p className="mt-3 text-center text-white/80 max-w-2xl mx-auto">{service.desc}</p>
+          <h1 className="mt-5 text-center text-3xl sm:text-5xl font-extrabold">
+            {service.title}
+          </h1>
+          <p className="mt-3 text-center text-white/80 max-w-2xl mx-auto">
+            {service.desc}
+          </p>
 
           <div className="mt-6 flex justify-center gap-3">
             <Link
@@ -181,7 +185,7 @@ export default function ServiceDetailPage({ params }) {
         </div>
       </section>
 
-      {/* İÇERİK — madde listeleri, görselsiz */}
+      {/* İÇERİK */}
       <section className="bg-white py-12 sm:py-16">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="rounded-2xl border border-gray-100 bg-white p-6 sm:p-8 shadow-[0_10px_30px_-16px_rgba(0,0,0,0.18)]">
